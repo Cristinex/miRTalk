@@ -37,7 +37,7 @@ create_miRTalk <- function(sc_data, sc_celltype, species, condition, if_normaliz
         stop("ncol(sc_data) is not consistent with length(sc_celltype)!")
     }
     if (ncol(sc_data) != length(condition)) {
-        stop("ncol(sc_data) is not consistent with length(sc_celltype)!")
+        stop("ncol(sc_data) is not consistent with length(condition)!") ##fixed bug changed from length(sc_celltype)
     }
     if (length(species) > 1 | !species %in% c("Human", "Mouse", "Rat")) {
         stop("Please provide a correct species, i.e., 'Human', 'Mouse' or 'Rat'!")
