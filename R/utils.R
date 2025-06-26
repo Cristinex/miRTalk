@@ -544,7 +544,7 @@
     return(cci_temp)
 }
 
-.get_specifity <- function(cci_tmp){
+.get_specificity <- function(cci_tmp){  #changed from .get_specifity
     cci_tmp$miR2tar <- paste0(cci_tmp$miRNA, ":", cci_tmp$target_gene)
     celltype_receiver <- unique(cci_tmp$celltype_receiver)
     res_specifity <- data.frame()
