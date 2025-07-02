@@ -547,12 +547,12 @@ find_miRTalk_bulk <- function(rna_data, mirna_data, type, resolution = "mature",
     }
     if(if_use_evbiog_risc){
         rna_data <- Seurat::AddModuleScore(rna_data, features = list(evbiog = evbiog_genes, risc = risc_genes, ritac = ritac_genes))
-        if (score_scale_method == "1") {
+        if (score_scale_method == "1") { #changed to score_scale_method from scale_method
             sample_meta$evbiog_score <- .minmax_normalize(rna_data$Cluster1)
             sample_meta$risc_score <- .minmax_normalize(rna_data$Cluster2)
             sample_meta$ritac_score <- .minmax_normalize(rna_data$Cluster3)
         }
-        if (score_scale_method == "2") {
+        if (score_scale_method == "2") { #changed to score_scale_method from scale_method
             sample_meta$evbiog_score <- .rank_normalize(rna_data$Cluster1)
             sample_meta$risc_score <- .rank_normalize(rna_data$Cluster2)
             sample_meta$ritac_score <- .rank_normalize(rna_data$Cluster3)
