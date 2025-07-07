@@ -658,7 +658,7 @@ plot_miRTalk_heatmap <- function(object, condition = NULL, celltype = NULL, miRN
         if (!all(miRNA %in% miR_name)) {
             stop("Please input the right miRNA name!")
         }
-        cci <- cci[cci$miRNA %in% miRNA, ]
+        cci <- cci[cci$miRNA %in% miR_name, ]  #changed from cci <- cci[cci$miRNA %in% miRNA, ]
     }
     if (nrow(cci) == 0) {
         stop("No cci found for these miRNA!")
